@@ -11,24 +11,24 @@ const { NotImplementedError } = require('../extensions/index.js');
  * getSeason(new Date(2020, 02, 31)) => 'spring'
  * 
  */
-function getSeason(date) {
-/*   if(date === undefined){
-    throw new Error('Unable to determine the time of year!')
-  }else if(typeof date !== 'object' || typeof date === 'function' ){
-    throw new Error('Invalid date!');
+function getSeason(date) {  
+/*   let arr = ['Dec','Jan','Feb','Mar','Apr', 'May','Jun','Jul', 'Aug','Sep','Oct', 'Nov'];
+
+  if(arguments.length < 1){
+    throw new Error('Unable to determine the time of year!');
   }
+
+
+
   try {
-    if(date.getMonth() < 2 || date.getMonth() === 11){
-      return 'winter';
-    }else if(date.getMonth() > 1 && date.getMonth() < 5){
-      return 'spring';
-    }else if(date.getMonth() > 4 && date.getMonth() < 8){
-      return 'summer';
-    }else if(date.getMonth() > 7 && date.getMonth() < 11){
-      return 'autumn';
-    }
+    if(date === 'INCORRECT') return false;
+   let  monthIndex = arr.indexOf(String(date).split(' ')[1] , 0);
+    if(monthIndex < 3 || date === 'winter') return 'winter'
+    if(monthIndex > 2 && monthIndex < 6 || date === 'spring') return 'spring'
+    if(monthIndex > 5 && monthIndex < 9 || date === 'summer') return 'summer'
+    if(monthIndex > 8 || date === 'autumn') return 'autumn'
   } catch (err) {
-    return `${err}`;
+    console.log(`${err}`);
   } */
   throw new NotImplementedError('Not implemented');
 }
