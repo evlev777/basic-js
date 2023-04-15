@@ -16,38 +16,33 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function repeater( str, options) {
-/*   let arr = [];
-  let addArr = [];
+  const string = String(str),
+    repeatTimes = options.repeatTimes || 1,
+    separator = options.separator || '+',
+    additionRepeatTimes = options.additionRepeatTimes || 1,
+    additionSeparator = String(options.additionSeparator || '|');
+  let addition = String(options.addition),
+    res = '';
 
+  addition = addition === 'undefined' ? '' : addition;
 
-  if(typeof options.repeatTimes !== 'undefined' ){
-    for(let i = 0; i < options.repeatTimes; i++){
-      arr.push(options.addition)
+  for (let i = 0; i < repeatTimes; i++) {
+    res += string;
+
+    for (let n = 0; n < additionRepeatTimes; n++) {
+      res += addition;
+
+      if (n !== additionRepeatTimes - 1) {
+        res += additionSeparator;
+      }
+    }
+
+    if (i !== repeatTimes - 1) {
+      res += separator;
     }
   }
 
-  if(typeof options.additionRepeatTimes !== 'undefined' && typeof options.addition !== 'undefined'){
-    for(let i = 0; i < additionRepeatTimes; i++){
-      addArr.push(str)
-    }
-
-    if(typeof options.additionSeparator === 'undefined'){
-      return addArr.join('|')
-    }else {
-      return addArr.join(`${options.additionSeparator}`)
-    }
-  }
-
-  arr = arr.map(item => 
-    item + options.addition
-    )
-
-  if(typeof options.separator === 'undefined'){
-    return arr.join('+')
-  }else {
-    return arr.join(`${options.separator}`)
-  } */
-  throw new NotImplementedError('Not implemented');
+  return res;
 }
 
 module.exports = {
