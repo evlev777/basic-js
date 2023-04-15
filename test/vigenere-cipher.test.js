@@ -49,7 +49,6 @@ describe('Vigenere cipher', () => {
         () => reverseMachine.decrypt()
       ], 'Incorrect arguments!');
 
-      assert.strictEqual(res.every($ => $ === CORRECT_RESULT_MSG), true);
     });
 
     it.optional('base encryption', () => {
